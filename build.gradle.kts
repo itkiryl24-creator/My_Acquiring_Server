@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.20"
+    application
 }
 
 group = "org.example"
@@ -33,17 +34,19 @@ dependencies {
 
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
-    // Корутины
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // Логирование
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
-    // H2 база (если нужна)
     implementation("com.h2database:h2:2.2.224")
 
 
     implementation("io.ktor:ktor-serialization-gson:$ktorVersion")
 }
+
+application {
+    mainClass.set("org.example.MainKt")
+}
+
 
 
